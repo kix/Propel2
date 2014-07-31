@@ -17,7 +17,6 @@ use Propel\Generator\Exception\LogicException;
 use Propel\Generator\Exception\RuntimeException;
 use Propel\Generator\Model\Column;
 use Propel\Generator\Model\ForeignKey;
-use Propel\Generator\Model\Table;
 
 /**
  * Baseclass for OM-building classes.
@@ -106,6 +105,8 @@ abstract class AbstractOMBuilder extends DataModelBuilder
      * Creates a $obj = new Book(); code snippet. Can be used by frameworks, for instance, to
      * extend this behavior, e.g. initialize the object after creating the instance or so.
      *
+     * @param string $objName
+     * @param string $clsName
      * @return string Some code
      */
     public function buildObjectInstanceCreationCode($objName, $clsName)
@@ -779,6 +780,7 @@ abstract class AbstractOMBuilder extends DataModelBuilder
 
     /**
      * Most of the code comes from the PHP-CS-Fixer project
+     * @param string $content
      */
     private function clean($content)
     {
@@ -821,6 +823,7 @@ abstract class AbstractOMBuilder extends DataModelBuilder
      * Opens class.
      *
      * @param string &$script
+     * @param string $script
      */
     abstract protected function addClassOpen(&$script);
 

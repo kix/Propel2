@@ -91,7 +91,7 @@ abstract class PdoAdapter
      *
      * @param array the connection parameters from the configuration
      *
-     * @return array the modified parameters
+     * @return ConnectionInterface the modified parameters
      */
     protected function prepareParams($conparams)
     {
@@ -251,7 +251,7 @@ abstract class PdoAdapter
      * @param ConnectionInterface $con
      * @param string              $name
      *
-     * @return mixed
+     * @return string
      */
     public function getId(ConnectionInterface $con, $name = null)
     {

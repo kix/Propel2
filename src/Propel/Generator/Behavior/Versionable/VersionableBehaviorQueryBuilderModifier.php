@@ -25,6 +25,9 @@ class VersionableBehaviorQueryBuilderModifier
 
     protected $objectClassName;
 
+    /**
+     * @param VersionableBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;
@@ -41,6 +44,9 @@ static \$isVersioningEnabled = true;
 ";
     }
 
+    /**
+     * @param string $key
+     */
     protected function getParameter($key)
     {
         return $this->behavior->getParameter($key);
@@ -104,6 +110,9 @@ static \$isVersioningEnabled = true;
         return $script;
     }
 
+    /**
+     * @param string $script
+     */
     protected function addFilterByVersion(&$script)
     {
         $script .= "

@@ -13,7 +13,6 @@ namespace Propel\Generator\Reverse;
 // TODO: to remove
 use Propel\Generator\Model\Column;
 use Task;
-
 use Propel\Generator\Model\Table;
 use Propel\Generator\Model\Database;
 use Propel\Generator\Model\PropelTypes;

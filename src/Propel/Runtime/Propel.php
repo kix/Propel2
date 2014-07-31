@@ -267,7 +267,7 @@ class Propel
      * @param string $message The message that will be logged.
      * @param int    $level   The logging level.
      *
-     * @return boolean True if the message was logged successfully or no logger was used.
+     * @return boolean|null True if the message was logged successfully or no logger was used.
      */
     public static function log($message, $level = self::LOG_DEBUG)
     {

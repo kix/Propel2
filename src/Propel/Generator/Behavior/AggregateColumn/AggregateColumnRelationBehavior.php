@@ -152,6 +152,9 @@ class AggregateColumnRelationBehavior extends Behavior
         return $this->getTable()->getDatabase()->getTable($this->getParameter('foreign_table'));
     }
 
+    /**
+     * @return string
+     */
     protected function getForeignKey()
     {
         $foreignTable = $this->getForeignTable();
@@ -161,6 +164,9 @@ class AggregateColumnRelationBehavior extends Behavior
         return array_shift($fks);
     }
 
+    /**
+     * @return string
+     */
     protected function getRelationName($builder)
     {
         return $builder->getFKPhpNameAffix($this->getForeignKey());

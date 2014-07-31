@@ -29,12 +29,18 @@ class NestedSetBehaviorQueryBuilderModifier
 
     protected $tableMapClassName;
 
+    /**
+     * @param NestedSetBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;
         $this->table = $behavior->getTable();
     }
 
+    /**
+     * @param string $key
+     */
     protected function getParameter($key)
     {
         return $this->behavior->getParameter($key);
@@ -98,6 +104,9 @@ class NestedSetBehaviorQueryBuilderModifier
         return $script;
     }
 
+    /**
+     * @param string $script
+     */
     protected function addTreeRoots(&$script)
     {
         $script .= "
@@ -910,6 +919,9 @@ public static function setNegativeScope(\$scope, ConnectionInterface \$con = nul
 ";
     }
 
+    /**
+     * @param string $columnName
+     */
     protected function getColumnPhpName($columnName)
     {
         return $this->behavior->getColumnForParameter($columnName)->getPhpName();

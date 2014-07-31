@@ -170,6 +170,8 @@ class TableMap
 
     /**
      * Construct a new TableMap.
+     * @param string $name
+     * @param DatabaseMap $dbMap
      */
     public function __construct($name = null, $dbMap = null)
     {
@@ -437,7 +439,7 @@ class TableMap
     /**
      * Does this table contain the specified column?
      *
-     * @param  mixed   $name      name of the column or ColumnMap instance
+     * @param  string   $name      name of the column or ColumnMap instance
      * @param  boolean $normalize Normalize the column name (if column name not like FIRST_NAME)
      * @return boolean True if the table contains the column.
      */
@@ -475,7 +477,7 @@ class TableMap
     /**
      * Does this table contain the specified column?
      *
-     * @param  mixed   $phpName name of the column
+     * @param  string   $phpName name of the column
      * @return boolean True if the table contains the column.
      */
     public function hasColumnByPhpName($phpName)
@@ -681,7 +683,7 @@ class TableMap
      * Gets the RelationMap objects of the table
      * This method will build the relations if they are not built yet
      *
-     * @return array list of RelationMap objects
+     * @return RelationMap[] list of RelationMap objects
      */
     public function getRelations()
     {

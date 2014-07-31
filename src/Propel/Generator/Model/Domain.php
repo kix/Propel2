@@ -321,7 +321,7 @@ class Domain extends MappingModel
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getOriginSqlType()
     {

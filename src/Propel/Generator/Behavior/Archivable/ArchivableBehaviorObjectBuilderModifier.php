@@ -21,6 +21,9 @@ class ArchivableBehaviorObjectBuilderModifier
     protected $table;
     protected $builder;
 
+    /**
+     * @param ArchivableBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;

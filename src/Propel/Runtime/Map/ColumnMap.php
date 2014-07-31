@@ -307,6 +307,7 @@ class ColumnMap
      * Set if this column may be null.
      *
      * @param      Boolean nn True if column may be null.
+     * @param boolean $nn
      */
     public function setNotNull($nn)
     {
@@ -326,7 +327,7 @@ class ColumnMap
     /**
      * Sets the default value for this column.
      *
-     * @param mixed $defaultValue the default value for the column
+     * @param string|null $defaultValue the default value for the column
      */
     public function setDefaultValue($defaultValue)
     {
@@ -347,6 +348,8 @@ class ColumnMap
      *
      * @param      string tableName The name of the table that is foreign.
      * @param      string columnName The name of the column that is foreign.
+     * @param string $tableName
+     * @param string $columnName
      */
     public function setForeignKey($tableName, $columnName)
     {

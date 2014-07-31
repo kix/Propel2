@@ -45,6 +45,9 @@ abstract class AbstractParser
         return $this->fromArray($data);
     }
 
+    /**
+     * @param string $data
+     */
     public function listToArray($data)
     {
         return $this->toArray($data);

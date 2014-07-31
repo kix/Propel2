@@ -814,8 +814,8 @@ class Table extends ScopedMappingModel implements IdMethod
     /**
      * Sets whether or not this table contains a foreign primary key.
      *
-     * @param $containsForeignPK
-     * @return boolean
+     * @param boolean $containsForeignPK
+     * @return boolean|null
      */
     public function setContainsForeignPK($containsForeignPK)
     {
@@ -1458,7 +1458,7 @@ class Table extends ScopedMappingModel implements IdMethod
     /**
      * Returns the list of all indices of this table.
      *
-     * @return array
+     * @return Index[]
      */
     public function getIndices()
     {
@@ -1468,7 +1468,7 @@ class Table extends ScopedMappingModel implements IdMethod
     /**
      * Returns the list of all unique indices of this table.
      *
-     * @return array
+     * @return Unique[]
      */
     public function getUnices()
     {
@@ -1479,7 +1479,7 @@ class Table extends ScopedMappingModel implements IdMethod
      * Checks if $keys are a unique constraint in the table.
      * (through primaryKey, through a regular unices constraints or for single keys when it has isUnique=true)
      *
-     * @param Column[]|string[] $keys
+     * @param Column[] $keys
      * @return boolean
      */
     public function isUnique(array $keys)

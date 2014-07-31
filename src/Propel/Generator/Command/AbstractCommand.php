@@ -63,6 +63,9 @@ abstract class AbstractCommand extends Command
         return new GeneratorConfig($options);
     }
 
+    /**
+     * @param string $file
+     */
     protected function getBuildProperties($file)
     {
         $properties = array();

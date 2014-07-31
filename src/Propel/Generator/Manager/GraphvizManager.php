@@ -82,6 +82,9 @@ class GraphvizManager extends AbstractManager
         }
     }
 
+    /**
+     * @param string $dotSyntax
+     */
     protected function writeDot($dotSyntax, $baseFilename)
     {
         $file = $this->getWorkingDirectory() . DIRECTORY_SEPARATOR . $baseFilename . '.schema.dot';

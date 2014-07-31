@@ -487,7 +487,6 @@ class XmlDumper implements DumperInterface
     /**
      * Appends the generated <unique> XML node to its parent node.
      *
-     * @param Unique       $unique     The Unique model instance
      * @param \DOMNode     $parentNode The parent DOMNode object
      */
     private function appendUniqueIndexNode(Unique $index, \DOMNode $parentNode)

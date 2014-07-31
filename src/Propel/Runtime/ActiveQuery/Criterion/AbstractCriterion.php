@@ -79,7 +79,7 @@ abstract class AbstractCriterion
      *
      * @param Criteria $outer      The outer class (this is an "inner" class).
      * @param string   $column     TABLE.COLUMN format.
-     * @param mixed    $value
+     * @param string    $value
      * @param string   $comparison
      */
     public function __construct(Criteria $outer, $column, $value, $comparison = null)
@@ -240,7 +240,7 @@ abstract class AbstractCriterion
 
     /**
      * Append an OR Criterion onto this Criterion's list.
-     * @return Criterion
+     * @return AbstractCriterion
      */
     public function addOr(AbstractCriterion $criterion)
     {
@@ -256,6 +256,7 @@ abstract class AbstractCriterion
      *
      * @param  string          &$sb    The string that will receive the Prepared Statement
      * @param  array           $params A list to which Prepared Statement parameters will be appended
+     * @param string $sb
      * @return void
      * @throws PropelException - if the expression builder cannot figure out how to turn a specified
      *                           expression into proper SQL.
@@ -295,6 +296,7 @@ abstract class AbstractCriterion
     /**
      * This method checks another Criteria to see if they contain
      * the same attributes and hashtable entries.
+     * @param AbstractCriterion $obj
      * @return boolean
      */
     public function equals($obj)
@@ -362,7 +364,7 @@ abstract class AbstractCriterion
     /**
      * get an array of all criterion attached to this
      * recursing through all sub criterion
-     * @return Criterion[]
+     * @return AbstractCriterion[]
      */
     public function getAttachedCriterion()
     {

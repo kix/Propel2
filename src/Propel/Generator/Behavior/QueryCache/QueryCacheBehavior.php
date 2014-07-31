@@ -64,6 +64,9 @@ class QueryCacheBehavior extends Behavior
         return $script;
     }
 
+    /**
+     * @param string $script
+     */
     protected function addSetQueryKey(&$script)
     {
         $script .= "

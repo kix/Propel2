@@ -195,7 +195,7 @@ class SqlManager extends AbstractManager
     /**
      * Returns a ConnectionInterface instance for a given datasource.
      *
-     * @return ConnectionInterface
+     * @return \Propel\Runtime\Connection\ConnectionInterface
      */
     protected function getConnectionInstance($datasource)
     {

@@ -54,6 +54,9 @@ class ConcreteInheritanceParentBehavior extends Behavior
         return $script;
     }
 
+    /**
+     * @param string $script
+     */
     protected function addHasChildObject(&$script)
     {
         $script .= "

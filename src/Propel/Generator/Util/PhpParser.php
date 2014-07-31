@@ -58,11 +58,17 @@ class PhpParser
         return $this->isAddPhp ? $this->removePhp($this->code) : $this->code;
     }
 
+    /**
+     * @param string $code
+     */
     protected function addPhp($code)
     {
         return '<?php '. $code;
     }
 
+    /**
+     * @param string $code
+     */
     protected function removePhp($code)
     {
         return substr($code, 6);
@@ -73,7 +79,7 @@ class PhpParser
      *
      * @param string $methodName The name of the method to find, e.g. 'getAuthor'
      *
-     * @return mixed false if not found, or the method code string if found
+     * @return string|false false if not found, or the method code string if found
      */
     public function findMethod($methodName)
     {
@@ -150,7 +156,7 @@ class PhpParser
      *
      * @param string $methodName The name of the method to find, e.g. 'getAuthor'
      *
-     * @return mixed false if not found, or the method code string if found
+     * @return string|false false if not found, or the method code string if found
      */
     public function removeMethod($methodName)
     {
@@ -169,7 +175,7 @@ class PhpParser
      * @param string $methodName The name of the method to find, e.g. 'getAuthor'
      * @param string $newCode    The code to use in place of the old method definition
      *
-     * @return mixed false if not found, or the method code string if found
+     * @return string|false false if not found, or the method code string if found
      */
     public function replaceMethod($methodName, $newCode)
     {
@@ -188,7 +194,7 @@ class PhpParser
      * @param string $methodName The name of the method to find, e.g. 'getAuthor'
      * @param string $newCode    The code to add to the class
      *
-     * @return mixed false if not found, or the method code string if found
+     * @return string|false false if not found, or the method code string if found
      */
     public function addMethodAfter($methodName, $newCode)
     {
@@ -207,7 +213,7 @@ class PhpParser
      * @param string $methodName The name of the method to find, e.g. 'getAuthor'
      * @param string $newCode    The code to add to the class
      *
-     * @return mixed false if not found, or the method code string if found
+     * @return string|false false if not found, or the method code string if found
      */
     public function addMethodBefore($methodName, $newCode)
     {

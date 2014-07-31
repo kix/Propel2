@@ -64,11 +64,17 @@ class SortableBehaviorObjectBuilderModifier
         $this->table = $behavior->getTable();
     }
 
+    /**
+     * @param string $key
+     */
     protected function getParameter($key)
     {
         return $this->behavior->getParameter($key);
     }
 
+    /**
+     * @param string $name
+     */
     protected function getColumnAttribute($name)
     {
         return strtolower($this->behavior->getColumnForParameter($name)->getName());
@@ -248,6 +254,7 @@ protected \$oldScope;
     /**
      * Get the wraps for getter/setter, if the rank column has not the default name
      *
+     * @param string $script
      * @return string
      */
     protected function addRankAccessors(&$script)

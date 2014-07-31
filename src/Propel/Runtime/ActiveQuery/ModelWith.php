@@ -81,6 +81,9 @@ class ModelWith
 
     // DataObject getters & setters
 
+    /**
+     * @param string $modelName
+     */
     public function setModelName($modelName)
     {
         if (0 === strpos($modelName, '\\')) {

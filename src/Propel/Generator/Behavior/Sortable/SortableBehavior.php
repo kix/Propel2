@@ -100,7 +100,7 @@ class SortableBehavior extends Behavior
      * Generates the method argument signature, the appropriate phpDoc for @params,
      * the scope builder php code and the scope variable builder php code/
      *
-     * @return array ($methodSignature, $paramsDoc, $scopeBuilder, $buildScopeVars)
+     * @return string[] ($methodSignature, $paramsDoc, $scopeBuilder, $buildScopeVars)
      */
     public function generateScopePhp()
     {

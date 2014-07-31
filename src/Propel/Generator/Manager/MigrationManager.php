@@ -284,6 +284,9 @@ class MigrationManager extends AbstractManager
         return new $className();
     }
 
+    /**
+     * @param integer $timestamp
+     */
     public function getMigrationClassBody($migrationsUp, $migrationsDown, $timestamp)
     {
         $timeInWords = date('Y-m-d H:i:s', $timestamp);
@@ -350,6 +353,9 @@ EOP;
         return $migrationClassBody;
     }
 
+    /**
+     * @param integer $timestamp
+     */
     public static function getMigrationFileName($timestamp)
     {
         return sprintf('%s.php', self::getMigrationClassName($timestamp));

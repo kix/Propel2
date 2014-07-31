@@ -49,6 +49,7 @@ interface GeneratorConfigInterface
      *
      * @param string $name
      * @param mixed  $value
+     * @return void
      */
     public function setBuildProperty($name, $value);
 

@@ -90,7 +90,7 @@ class OnDemandCollection extends Collection
     /**
      * Gets the current key in the iterator
      *
-     * @return string
+     * @return integer
      */
     public function key()
     {

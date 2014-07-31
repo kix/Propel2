@@ -16,6 +16,7 @@ interface ConnectionManagerInterface
 {
     /**
      * @param string $name The datasource name associated to this connection
+     * @return void
      */
     public function setName($name);
 
@@ -38,5 +39,8 @@ interface ConnectionManagerInterface
      */
     public function getReadConnection(AdapterInterface $adapter = null);
 
+    /**
+     * @return void
+     */
     public function closeConnections();
 }

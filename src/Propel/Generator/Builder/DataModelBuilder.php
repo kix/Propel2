@@ -314,6 +314,7 @@ abstract class DataModelBuilder
 
     /**
      * Returns new Query Inheritance builder class for this table.
+     * @param \Propel\Generator\Model\Inheritance $child
      * @return ObjectBuilder
      */
     public function getNewQueryInheritanceBuilder($child)

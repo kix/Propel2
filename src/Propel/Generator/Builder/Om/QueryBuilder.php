@@ -822,6 +822,7 @@ abstract class ".$this->getUnqualifiedClassName()." extends " . $parentClass . "
     /**
      * Adds the filterByCol method for this object.
      * @param string &$script The script will be modified in this method.
+     * @param \Propel\Generator\Model\Column $col
      */
     protected function addFilterByCol(&$script, $col)
     {
@@ -1015,6 +1016,7 @@ abstract class ".$this->getUnqualifiedClassName()." extends " . $parentClass . "
     /**
      * Adds the singular filterByCol method for an Array column.
      * @param string &$script The script will be modified in this method.
+     * @param \Propel\Generator\Model\Column $col
      */
     protected function addFilterByArrayCol(&$script, $col)
     {
@@ -1060,7 +1062,7 @@ abstract class ".$this->getUnqualifiedClassName()." extends " . $parentClass . "
     /**
      * Adds the filterByFk method for this object.
      * @param string &$script The script will be modified in this method.
-     * @param $fk ForeignKey
+     * @param ForeignKey $fk ForeignKey
      */
     protected function addFilterByFk(&$script, $fk)
     {
@@ -1197,7 +1199,7 @@ abstract class ".$this->getUnqualifiedClassName()." extends " . $parentClass . "
     /**
      * Adds the joinFk method for this object.
      * @param string &$script The script will be modified in this method.
-     * @param $fk ForeignKey
+     * @param ForeignKey $fk ForeignKey
      */
     protected function addJoinFk(&$script, $fk)
     {
@@ -1224,6 +1226,9 @@ abstract class ".$this->getUnqualifiedClassName()." extends " . $parentClass . "
     /**
      * Adds a joinRelated method for this object.
      * @param string &$script The script will be modified in this method.
+     * @param string $queryClass
+     * @param string $relationName
+     * @param string $joinType
      */
     protected function addJoinRelated(&$script, $fkTable, $queryClass, $relationName, $joinType)
     {
@@ -1265,7 +1270,7 @@ abstract class ".$this->getUnqualifiedClassName()." extends " . $parentClass . "
     /**
      * Adds the useFkQuery method for this object.
      * @param string &$script The script will be modified in this method.
-     * @param $fk ForeignKey
+     * @param ForeignKey $fk ForeignKey
      */
     protected function addUseFkQuery(&$script, $fk)
     {
@@ -1296,6 +1301,9 @@ abstract class ".$this->getUnqualifiedClassName()." extends " . $parentClass . "
     /**
      * Adds a useRelatedQuery method for this object.
      * @param string &$script The script will be modified in this method.
+     * @param string $queryClass
+     * @param string $relationName
+     * @param string $joinType
      */
     protected function addUseRelatedQuery(&$script, $fkTable, $queryClass, $relationName, $joinType)
     {

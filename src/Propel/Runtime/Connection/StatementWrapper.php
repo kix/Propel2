@@ -284,7 +284,7 @@ class StatementWrapper implements StatementInterface, \IteratorAggregate
     /**
      * Return the internal statement, which is traversable
      *
-     * @return Traversable
+     * @return StatementInterface
      */
     public function getIterator()
     {
