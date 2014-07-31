@@ -42,6 +42,7 @@ interface PlatformInterface
     /**
      * Sets a database connection to use (for quoting, etc.).
      * @param ConnectionInterface $con The database connection to use in this Platform class.
+     * @return void
      */
     public function setConnection(ConnectionInterface $con = null);
 
@@ -55,6 +56,7 @@ interface PlatformInterface
      * Sets the GeneratorConfigInterface which contains any generator build properties.
      *
      * @param GeneratorConfigInterface $config
+     * @return void
      */
     public function setGeneratorConfig(GeneratorConfigInterface $config);
 
@@ -83,18 +85,19 @@ interface PlatformInterface
      * Returns the db specific domain for a propelType.
      *
      * @param  string $propelType the Propel type name.
-     * @return Domain The db specific domain.
+     * @return \Propel\Generator\Model\Domain The db specific domain.
      */
     public function getDomainForType($propelType);
 
     /**
+     * @param boolean $notNull
      * @return string The RDBMS-specific SQL fragment for <code>NULL</code>
      * or <code>NOT NULL</code>.
      */
     public function getNullString($notNull);
 
     /**
-     * @return The RDBMS-specific SQL fragment for autoincrement.
+     * @return string RDBMS-specific SQL fragment for autoincrement.
      */
     public function getAutoIncrement();
 
@@ -200,7 +203,7 @@ interface PlatformInterface
      * SQL.
      *
      * @param  mixed $tf A boolean or string representation of boolean ('y', 'true').
-     * @return mixed
+     * @return string
      */
     public function getBooleanString($tf);
 
@@ -240,6 +243,7 @@ interface PlatformInterface
      * which the most Platforms requires but which is not always explicitly defined in the table model.
      *
      * @param Table $table The table object which gets modified.
+     * @return void
      */
     public function normalizeTable(Table $table);
 }

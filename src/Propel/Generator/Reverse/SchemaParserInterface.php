@@ -31,6 +31,7 @@ interface SchemaParserInterface
      * Sets the database connection.
      *
      * @param ConnectionInterface $dbh
+     * @return void
      */
     public function setConnection(ConnectionInterface $dbh);
 
@@ -38,6 +39,7 @@ interface SchemaParserInterface
      * Sets the GeneratorConfig to use in the parsing.
      *
      * @param GeneratorConfigInterface $config
+     * @return void
      */
     public function setGeneratorConfig(GeneratorConfigInterface $config);
 

@@ -57,6 +57,9 @@ class TimestampableBehavior extends Behavior
         return 'set' . $this->getColumnForParameter($column)->getPhpName();
     }
 
+    /**
+     * @param string $columnName
+     */
     protected function getColumnConstant($columnName, $builder)
     {
         return $builder->getColumnConstant($this->getColumnForParameter($columnName));

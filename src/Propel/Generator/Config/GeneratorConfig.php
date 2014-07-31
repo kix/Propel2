@@ -95,7 +95,7 @@ class GeneratorConfig implements GeneratorConfigInterface
      * Returns a specific Propel (renamed) property from the build.
      *
      * @param  string $name
-     * @return mixed
+     * @return string
      */
     public function getBuildProperty($name)
     {
@@ -284,6 +284,9 @@ class GeneratorConfig implements GeneratorConfigInterface
         return $this->buildConnections;
     }
 
+    /**
+     * @param string $xmlString
+     */
     protected function parseBuildConnections($xmlString)
     {
         $conf = simplexml_load_string($xmlString);

@@ -43,6 +43,11 @@ class PropelConditionalProxy
 
     protected $parentState;
 
+    /**
+     * @param \Propel\Runtime\ActiveQuery\Criteria $criteria
+     * @param boolean $cond
+     * @param PropelConditionalProxy $proxy
+     */
     public function __construct($criteria, $cond, $proxy = null)
     {
         $this->criteria = $criteria;

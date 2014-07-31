@@ -432,6 +432,7 @@ abstract class ".$this->getUnqualifiedClassName().$parentClass." implements Acti
      * Adds variables that store column values.
      *
      * @param string &$script
+     * @param string $script
      */
     protected function addColumnAttributes(&$script)
     {
@@ -1386,6 +1387,7 @@ abstract class ".$this->getUnqualifiedClassName().$parentClass." implements Acti
      *
      * @param string &$script
      * @param Column $column
+     * @param string $script
      */
     protected function addMutatorClose(&$script, Column $column)
     {
@@ -3903,6 +3905,9 @@ abstract class ".$this->getUnqualifiedClassName().$parentClass." implements Acti
 ";
     }
 
+    /**
+     * @param string $fkName
+     */
     protected function addScheduledForDeletionAttribute(&$script, $fkName)
     {
         $fkName = lcfirst($fkName);

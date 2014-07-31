@@ -219,7 +219,7 @@ class BaseModelCriteria extends Criteria implements \IteratorAggregate
      * constructed on a Propel\Runtime\Collection\PropelCollection.
      * Compulsory for implementation of \IteratorAggregate.
      *
-     * @return Traversable
+     * @return \Traversable
      *
      * @throws LogicException
      */

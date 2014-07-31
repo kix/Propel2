@@ -24,6 +24,9 @@ class SortableBehaviorTableMapBuilderModifier
 
     protected $table;
 
+    /**
+     * @param SortableBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;
@@ -58,6 +61,9 @@ class SortableBehaviorTableMapBuilderModifier
         ));
     }
 
+    /**
+     * @param string $name
+     */
     protected function getColumnConstant($name)
     {
         return strtoupper($this->behavior->getColumnForParameter($name)->getName());

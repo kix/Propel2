@@ -387,6 +387,9 @@ abstract class AbstractManager
         }
     }
 
+    /**
+     * @param string $message
+     */
     protected function log($message)
     {
         if (null !== $this->loggerClosure) {

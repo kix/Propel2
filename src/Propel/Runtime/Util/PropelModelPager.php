@@ -157,6 +157,9 @@ class PropelModelPager implements \IteratorAggregate, \Countable
         return $this->maxRecordLimit;
     }
 
+    /**
+     * @param boolean $limit
+     */
     public function setMaxRecordLimit($limit)
     {
         $this->maxRecordLimit = $limit;

@@ -217,7 +217,7 @@ class Index extends MappingModel
      * Returns the size for the specified column.
      *
      * @param  string  $name
-     * @return integer
+     * @return string|null
      */
     public function getColumnSize($name)
     {
@@ -282,7 +282,7 @@ class Index extends MappingModel
      *
      * You should not edit this list.
      *
-     * @return array
+     * @return string[]
      */
     public function getColumns()
     {

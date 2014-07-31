@@ -446,7 +446,7 @@ DROP TABLE IF EXISTS " . $this->quoteIdentifier($table->getName()) . ";
      * // '"foo","bar"'
      * </code>
      * @param array Column[] or string[]
-     * @param string $delim The delimiter to use in separating the column names.
+     * @param string $delimiter The delimiter to use in separating the column names.
      *
      * @return string
      */
@@ -698,6 +698,9 @@ ALTER TABLE %s DROP CONSTRAINT %s;
         return $script;
     }
 
+    /**
+     * @param string $comment
+     */
     public function getCommentLineDDL($comment)
     {
         $pattern = "-- %s
@@ -1029,6 +1032,7 @@ ALTER TABLE %s MODIFY %s;
     /**
      * Builds the DDL SQL to modify a list of columns
      *
+     * @param ColumnDiff[] $columnDiffs
      * @return string
      */
     public function getModifyColumnsDDL($columnDiffs)
@@ -1236,8 +1240,7 @@ ALTER TABLE %s ADD
      * This function is used to set default column values when building
      * SQL.
      *
-     * @param  mixed $tf A Boolean or string representation of Boolean ('y', 'true').
-     * @return mixed
+     * @return string
      */
     public function getBooleanString($b)
     {
@@ -1257,6 +1260,9 @@ ALTER TABLE %s ADD
         return '0';
     }
 
+    /**
+     * @param string $stringValue
+     */
     public function getPhpArrayString($stringValue)
     {
         $stringValue = trim($stringValue);

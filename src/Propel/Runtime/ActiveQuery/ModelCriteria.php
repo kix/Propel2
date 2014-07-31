@@ -702,7 +702,7 @@ class ModelCriteria extends BaseModelCriteria
      *
      * @see ModelCriteria::endUse()
      * @param string $relationName        Relation name or alias
-     * @param string $secondCriteriaClass ClassName for the ModelCriteria to be used
+     * @param string $secondaryCriteriaClass ClassName for the ModelCriteria to be used
      *
      * @return ModelCriteria The secondary criteria object
      */
@@ -1234,6 +1234,9 @@ class ModelCriteria extends BaseModelCriteria
         return $count;
     }
 
+    /**
+     * @param ConnectionInterface $con
+     */
     public function doCount($con = null)
     {
         $this->configureSelectColumns();
@@ -1292,6 +1295,9 @@ class ModelCriteria extends BaseModelCriteria
         return $this->postDelete($affectedRows, $con);
     }
 
+    /**
+     * @param integer $affectedRows
+     */
     protected function postDelete($affectedRows, ConnectionInterface $con)
     {
     }
@@ -1438,6 +1444,9 @@ class ModelCriteria extends BaseModelCriteria
         return $this->postUpdate($affectedRows, $con);
     }
 
+    /**
+     * @param integer $affectedRows
+     */
     protected function postUpdate($affectedRows, ConnectionInterface $con)
     {
     }
@@ -1798,7 +1807,7 @@ class ModelCriteria extends BaseModelCriteria
     /**
      * Builds, binds and executes a SELECT query based on the current object.
      *
-     * @param $con A connection object
+     * @param ConnectionInterface $con A connection object
      *
      * @return DataFetcherInterface A dataFetcher using the connection, ready to be fetched
      *
@@ -1944,7 +1953,6 @@ class ModelCriteria extends BaseModelCriteria
      * Overrides Criteria::add() to force the use of a true table alias if it exists
      *
      * @see Criteria::add()
-     * @param string $column   The colName of column to run the condition on (e.g. BookTableMap::ID)
      * @param mixed  $value
      * @param string $operator A String, like Criteria::EQUAL.
      *

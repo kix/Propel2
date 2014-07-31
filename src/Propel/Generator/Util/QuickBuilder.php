@@ -144,6 +144,9 @@ class QuickBuilder
         return count($statements);
     }
 
+    /**
+     * @return string
+     */
     public function getSQL()
     {
         return $this->getPlatform()->getAddTablesDDL($this->getDatabase());

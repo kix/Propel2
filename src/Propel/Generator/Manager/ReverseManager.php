@@ -209,7 +209,7 @@ class ReverseManager extends AbstractManager
     }
 
     /**
-     * @return ConnectionInterface
+     * @return \Propel\Runtime\Connection\ConnectionInterface
      */
     protected function getConnection()
     {

@@ -24,12 +24,18 @@ class VersionableBehaviorObjectBuilderModifier
     protected $builder;
     protected $objectClassName;
 
+    /**
+     * @param VersionableBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;
         $this->table = $behavior->getTable();
     }
 
+    /**
+     * @param string $key
+     */
     protected function getParameter($key)
     {
         return $this->behavior->getParameter($key);
@@ -129,6 +135,9 @@ class VersionableBehaviorObjectBuilderModifier
         return $script;
     }
 
+    /**
+     * @param string $script
+     */
     protected function addEnforceVersionAttribute(&$script)
     {
         $script .= "
@@ -165,6 +174,9 @@ protected \$enforceVersion = false;
         return $script;
     }
 
+    /**
+     * @param string $script
+     */
     protected function addVersionSetter(&$script)
     {
         $script .= "

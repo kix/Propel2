@@ -177,6 +177,7 @@ class "  .$this->getUnqualifiedClassName() . " extends " . $baseClassName . "
      * Adds the factory for this object.
      *
      * @param string &$script
+     * @param string $script
      */
     protected function addFactory(&$script)
     {

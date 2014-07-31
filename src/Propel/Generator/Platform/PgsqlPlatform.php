@@ -526,6 +526,9 @@ DROP SEQUENCE %s CASCADE;
         return $ret;
     }
 
+    /**
+     * @param string $type
+     */
     public function isString($type)
     {
         $strings = ['VARCHAR'];
@@ -533,6 +536,9 @@ DROP SEQUENCE %s CASCADE;
         return in_array(strtoupper($type), $strings);
     }
 
+    /**
+     * @param string $type
+     */
     public function isNumber($type)
     {
         $numbers = ['INTEGER', 'INT4', 'INT2', 'NUMBER', 'NUMERIC', 'SMALLINT', 'BIGINT', 'DECICAML', 'REAL', 'DOUBLE PRECISION', 'SERIAL', 'BIGSERIAL'];

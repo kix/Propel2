@@ -26,22 +26,34 @@ class NestedSetBehaviorObjectBuilderModifier
 
     protected $objectClassName;
 
+    /**
+     * @param NestedSetBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;
         $this->table    = $behavior->getTable();
     }
 
+    /**
+     * @param string $key
+     */
     protected function getParameter($key)
     {
         return $this->behavior->getParameter($key);
     }
 
+    /**
+     * @param string $name
+     */
     protected function getColumnAttribute($name)
     {
         return strtolower($this->behavior->getColumnForParameter($name)->getName());
     }
 
+    /**
+     * @param string $name
+     */
     protected function getColumnPhpName($name)
     {
         return $this->behavior->getColumnForParameter($name)->getPhpName();
@@ -211,6 +223,9 @@ if (\$this->isInTree()) {
         return $script;
     }
 
+    /**
+     * @param string $script
+     */
     protected function addProcessNestedSetQueries(&$script)
     {
         $script .= "
@@ -1058,6 +1073,9 @@ public function insertAsFirstChildOf(\$parent)
         ));
     }
 
+    /**
+     * @param string $script
+     */
     protected function addInsertAsPrevSiblingOf(&$script)
     {
         $objectClassName = $this->builder->getObjectClassName();

@@ -175,6 +175,9 @@ class ConcreteInheritanceBehavior extends Behavior
         return $script;
     }
 
+    /**
+     * @param string $script
+     */
     protected function addObjectGetParentOrCreate(&$script)
     {
         $parentTable = $this->getParentTable();

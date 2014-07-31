@@ -132,7 +132,7 @@ class Schema
      * final initialization process.
      *
      * @param  boolean $doFinalInitialization
-     * @return array
+     * @return Database[]
      */
     public function getDatabases($doFinalInitialization = true)
     {

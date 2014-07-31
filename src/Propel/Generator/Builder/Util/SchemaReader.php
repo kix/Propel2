@@ -364,6 +364,9 @@ class SchemaReader
         return count($this->schemasTagsStack) > 1;
     }
 
+    /**
+     * @param string|null $filePath
+     */
     protected function isAlreadyParsed($filePath)
     {
         return isset($this->schemasTagsStack[$filePath]);

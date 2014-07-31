@@ -299,7 +299,7 @@ class ForeignKey extends MappingModel
     /**
      * Returns the PlatformInterface instance.
      *
-     * @return PlatformInterface
+     * @return \Propel\Generator\Platform\PlatformInterface|null
      */
     private function getPlatform()
     {
@@ -397,7 +397,6 @@ class ForeignKey extends MappingModel
     /**
      * Sets the parent Table of the foreign key.
      *
-     * @param Table $table
      */
     public function setTable(Table $parent)
     {
@@ -483,7 +482,7 @@ class ForeignKey extends MappingModel
     /**
      * Returns an array of local column names.
      *
-     * @return array
+     * @return string[]
      */
     public function getLocalColumns()
     {
@@ -608,7 +607,7 @@ class ForeignKey extends MappingModel
     /**
      * Returns an array of foreign column names.
      *
-     * @return array
+     * @return string[]
      */
     public function getForeignColumns()
     {

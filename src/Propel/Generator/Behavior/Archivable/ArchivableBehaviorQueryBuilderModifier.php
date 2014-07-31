@@ -20,6 +20,9 @@ class ArchivableBehaviorQueryBuilderModifier
     protected $behavior;
     protected $table;
 
+    /**
+     * @param ArchivableBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;

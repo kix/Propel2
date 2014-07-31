@@ -45,6 +45,7 @@ interface SqlAdapterInterface extends AdapterInterface
      * @param array       $params array('column' => ..., 'table' => ..., 'value' => ...)
      * @param Criteria    $values
      * @param DatabaseMap $dbMap
+     * @return void
      */
     public function cleanupSQL(&$sql, array &$params, Criteria $values, DatabaseMap $dbMap);
 
@@ -54,6 +55,7 @@ interface SqlAdapterInterface extends AdapterInterface
      * @param string  $sql
      * @param integer $offset
      * @param integer $limit
+     * @return void
      */
     public function applyLimit(&$sql, $offset, $limit);
 
@@ -61,6 +63,7 @@ interface SqlAdapterInterface extends AdapterInterface
      * Gets the SQL string that this adapter uses for getting a random number.
      *
      * @param mixed $seed (optional) seed value for databases that support this
+     * @return string
      */
     public function random($seed = null);
 
@@ -116,6 +119,7 @@ interface SqlAdapterInterface extends AdapterInterface
      * @param StatementInterface $stmt
      * @param array              $params array('column' => ..., 'table' => ..., 'value' => ...)
      * @param DatabaseMap        $dbMap
+     * @return void
      */
     public function bindValues(StatementInterface $stmt, array $params, DatabaseMap $dbMap);
 

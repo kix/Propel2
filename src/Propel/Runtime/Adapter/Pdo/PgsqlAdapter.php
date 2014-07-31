@@ -173,7 +173,7 @@ class PgsqlAdapter extends PdoAdapter implements SqlAdapterInterface
     /**
      * @see PdoAdapter::getDeleteFromClause()
      *
-     * @param Propel\Runtime\ActiveQuery\Criteria $criteria
+     * @param Criteria $criteria
      * @param string                              $tableName
      *
      * @return string

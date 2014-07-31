@@ -48,6 +48,7 @@ class QuickGeneratorConfig implements GeneratorConfigInterface
     /**
      * Why would Phing use ini while it so fun to invent a new format? (sic)
      * parse_ini_file() doesn't work for Phing property files
+     * @param string $filepath
      */
     protected function parsePseudoIniFile($filepath)
     {

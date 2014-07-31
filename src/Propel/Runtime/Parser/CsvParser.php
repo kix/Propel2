@@ -70,7 +70,7 @@ class CsvParser extends AbstractParser
      * Accepts a row of data and returns it formatted
      *
      * @param  array $row An array of data to be formatted for output to the file
-     * @return array The formatted array
+     * @return string The formatted array
      */
     protected function formatRow($row)
     {
@@ -132,7 +132,7 @@ class CsvParser extends AbstractParser
      * Returns true if input contains quotechar, delimiter or any of the characters in lineTerminator
      *
      * @param  string  $input A single value to be checked for special characters
-     * @return boolean True if contains any special characters
+     * @return boolean|null True if contains any special characters
      */
     protected function containsSpecialChars($input)
     {
@@ -257,6 +257,9 @@ class CsvParser extends AbstractParser
         return preg_match('/^' . $quote . '.*' . $quote . '$/', $input);
     }
 
+    /**
+     * @param string $input
+     */
     protected function unescape($input)
     {
         return str_replace(

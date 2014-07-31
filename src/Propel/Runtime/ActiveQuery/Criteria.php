@@ -329,7 +329,7 @@ class Criteria
     /**
      * Get the column aliases.
      *
-     * @return array An assoc array which map the column alias names
+     * @return string[] An assoc array which map the column alias names
      * to the alias clauses.
      */
     public function getAsColumns()
@@ -340,7 +340,6 @@ class Criteria
     /**
      * Returns the column name associated with an alias (AS-column).
      *
-     * @param  string $alias
      * @return string $string
      */
     public function getColumnForAs($as)
@@ -593,7 +592,7 @@ class Criteria
      *     )
      * </code>
      *
-     * @return array array(table => array(table.column1, table.column2))
+     * @return null|Criteria array(table => array(table.column1, table.column2))
      */
     public function getTablesColumns()
     {
@@ -664,7 +663,6 @@ class Criteria
      * any SELECT columns or WHERE columns.  This must be explicitly
      * set, of course, in order to be useful.
      *
-     * @param string $v
      */
     public function setPrimaryTableName($tableName)
     {
@@ -724,7 +722,7 @@ class Criteria
      *
      * @param  string   $key
      * @param  mixed    $value
-     * @return Instance of self.
+     * @return Criteria of self.
      */
     public function put($key, $value)
     {
@@ -771,11 +769,10 @@ class Criteria
      * The name of the table must be used implicitly in the column name,
      * so the Column name must be something like 'TABLE.id'.
      *
-     * @param string $critOrColumn The column to run the comparison on, or a Criterion object.
      * @param mixed  $value
      * @param string $comparison   A String.
      *
-     * @return A modified Criteria object.
+     * @return Criteria modified Criteria object.
      */
     public function add($p1, $value = null, $comparison = null)
     {
@@ -817,7 +814,7 @@ class Criteria
      * @param mixed  $value
      * @param string $comparison A String.
      *
-     * @return A modified Criteria object.
+     * @return Criteria modified Criteria object.
      */
     public function addCond($name, $p1, $value = null, $comparison = null)
     {
@@ -1322,7 +1319,7 @@ class Criteria
     /**
      * Get select modifiers.
      *
-     * @return An array with the select modifiers.
+     * @return string[] array with the select modifiers.
      */
     public function getSelectModifiers()
     {
@@ -1333,7 +1330,7 @@ class Criteria
      * Add group by column name.
      *
      * @param  string $groupBy The name of the column to group by.
-     * @return A      modified Criteria object.
+     * @return Criteria      modified Criteria object.
      */
     public function addGroupByColumn($groupBy)
     {
@@ -1346,7 +1343,7 @@ class Criteria
      * Add order by column name, explicitly specifying ascending.
      *
      * @param  string $name The name of the column to order by.
-     * @return A      modified Criteria object.
+     * @return Criteria      modified Criteria object.
      */
     public function addAscendingOrderByColumn($name)
     {
@@ -1647,7 +1644,7 @@ class Criteria
      * @param mixed $value      The value to bind in the condition
      * @param mixed $comparison A PDO::PARAM_ class constant
      *
-     * @return A modified Criteria object.
+     * @return Criteria modified Criteria object.
      */
     public function addHaving($p1, $value = null, $comparison = null)
     {
@@ -1675,7 +1672,7 @@ class Criteria
      * @param mixed $value      The value to bind in the condition
      * @param mixed $comparison A Criteria class constant, or a PDO::PARAM_ class constant
      *
-     * @return Criterion
+     * @return AbstractCriterion|null
      */
     protected function getCriterionForCondition($p1, $value = null, $comparison = null)
     {
@@ -1701,6 +1698,7 @@ class Criteria
      *  - addAnd(column, value)
      *  - addAnd(Criterion)
      *
+     * @param string $p3
      * @return Criteria A modified Criteria object.
      */
     public function addAnd($p1, $p2 = null, $p3 = null, $preferColumnCondition = true)
@@ -1731,6 +1729,7 @@ class Criteria
      *  - addOr(column, value)
      *  - addOr(Criterion)
      *
+     * @param string $p3
      * @return Criteria A modified Criteria object.
      */
     public function addOr($p1, $p2 = null, $p3 = null, $preferColumnCondition = true)
@@ -2485,7 +2484,7 @@ class Criteria
      *
      * @param boolean $cond ignored
      *
-     * @return PropelConditionalProxy|Criteria
+     * @return PropelConditionalProxy
      */
     public function _elseif($cond)
     {
@@ -2500,7 +2499,7 @@ class Criteria
      * Returns a PropelConditionalProxy instance.
      * Allows for conditional statements in a fluid interface.
      *
-     * @return PropelConditionalProxy|Criteria
+     * @return PropelConditionalProxy
      */
     public function _else()
     {

@@ -127,7 +127,7 @@ class ArchivableBehavior extends Behavior
     }
 
     /**
-     * @return Table
+     * @return \Propel\Generator\Model\Table|null
      */
     public function getArchiveTable()
     {

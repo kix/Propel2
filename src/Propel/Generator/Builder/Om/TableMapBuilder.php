@@ -11,7 +11,6 @@
 namespace Propel\Generator\Builder\Om;
 
 use Propel\Generator\Model\ForeignKey;
-
 use Propel\Generator\Model\IdMethod;
 use Propel\Generator\Platform\PlatformInterface;
 
@@ -234,6 +233,7 @@ class ".$this->getUnqualifiedClassName()." extends TableMap
     /**
      * Adds the valueSet attributes for ENUM columns.
      * @param string &$script The script will be modified in this method.
+     * @param string $script
      */
     protected function addEnumColumnAttributes(&$script)
     {
@@ -299,6 +299,7 @@ class ".$this->getUnqualifiedClassName()." extends TableMap
     /**
      * Adds the CLASSKEY_* and CLASSNAME_* constants used for inheritance.
      * @param string &$script The script will be modified in this method.
+     * @param string $script
      */
     public function addInheritanceColumnConstants(&$script)
     {
@@ -756,6 +757,7 @@ class ".$this->getUnqualifiedClassName()." extends TableMap
      * Adds method to get a version of the primary key that can be used as a unique key for identifier map.
      *
      * @param string &$script The script will be modified in this method.
+     * @param string $script
      */
     protected function addGetPrimaryKeyHash(&$script)
     {

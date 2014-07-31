@@ -11,6 +11,7 @@ interface DataFetcherInterface extends \Iterator, \Countable
      * Sets the dataObject.
      *
      * @param mixed $dataObject
+     * @return void
      */
     public function setDataObject($dataObject);
 

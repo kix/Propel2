@@ -25,6 +25,9 @@ class I18nBehaviorObjectBuilderModifier
     protected $table;
     protected $builder;
 
+    /**
+     * @param I18nBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;
@@ -223,6 +226,9 @@ class I18nBehaviorObjectBuilderModifier
         $script = preg_replace($pattern, $replacement, $script);
     }
 
+    /**
+     * @param string $columnType
+     */
     protected function isDateType($columnType)
     {
         return in_array($columnType, array(

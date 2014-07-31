@@ -10,8 +10,6 @@
 
 namespace Propel\Runtime\Collection;
 
-use ArrayIterator;
-
 use Propel\Runtime\Propel;
 use Propel\Runtime\Collection\Exception\ModelNotFoundException;
 use Propel\Runtime\Exception\BadMethodCallException;
@@ -587,7 +585,7 @@ class Collection implements \ArrayAccess, \SeekableIterator, \Countable, \Serial
     /**
      * Get a write connection object for the database containing the elements of the collection
      *
-     * @return ConnectionInterface A ConnectionInterface connection object
+     * @return \Propel\Runtime\Connection\ConnectionInterface A ConnectionInterface connection object
      */
     public function getWriteConnection()
     {
@@ -604,7 +602,7 @@ class Collection implements \ArrayAccess, \SeekableIterator, \Countable, \Serial
      * $coll->importFrom('JSON', '{{"Id":9012,"Title":"Don Juan","ISBN":"0140422161","Price":12.99,"PublisherId":1234,"AuthorId":5678}}');
      * </code>
      *
-     * @param mixed $parser A AbstractParser instance, or a format name ('XML', 'YAML', 'JSON', 'CSV')
+     * @param string $parser A AbstractParser instance, or a format name ('XML', 'YAML', 'JSON', 'CSV')
      * @param string $data The source data to import from
      *
      * @return BaseObject The current object, for fluid interface

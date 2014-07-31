@@ -24,6 +24,9 @@ class I18nBehaviorQueryBuilderModifier
 
     protected $builder;
 
+    /**
+     * @param I18nBehavior $behavior
+     */
     public function __construct($behavior)
     {
         $this->behavior = $behavior;

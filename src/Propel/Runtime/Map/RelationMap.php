@@ -82,6 +82,9 @@ class RelationMap
         return $this->name;
     }
 
+    /**
+     * @param string $pluralName
+     */
     public function setPluralName($pluralName)
     {
         $this->pluralName = $pluralName;
@@ -290,7 +293,7 @@ class RelationMap
     /**
      * Get the onUpdate behavior
      *
-     * @return integer the relation type
+     * @return string the relation type
      */
     public function getOnUpdate()
     {
@@ -310,7 +313,7 @@ class RelationMap
     /**
      * Get the onDelete behavior
      *
-     * @return int the relation type
+     * @return string the relation type
      */
     public function getOnDelete()
     {

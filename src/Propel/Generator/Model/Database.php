@@ -13,9 +13,6 @@ namespace Propel\Generator\Model;
 use Propel\Generator\Exception\EngineException;
 use Propel\Generator\Exception\InvalidArgumentException;
 use Propel\Generator\Platform\PlatformInterface;
-use Propel\Generator\Util\BehaviorLocator;
-use Propel\Generator\Config\QuickGeneratorConfig;
-use Propel\Generator\Exception\BuildException;
 
 /**
  * A class for holding application data structures.
@@ -262,7 +259,7 @@ class Database extends ScopedMappingModel
     /**
      * Returns the list of supported string formats
      *
-     * @return array
+     * @return string[]
      */
     public static function getSupportedStringFormats()
     {
@@ -681,7 +678,7 @@ class Database extends ScopedMappingModel
     /**
      * Returns the GeneratorConfigInterface object.
      *
-     * @return GeneratorConfigInterface
+     * @return \Propel\Generator\Config\GeneratorConfigInterface|null
      */
     public function getGeneratorConfig()
     {
